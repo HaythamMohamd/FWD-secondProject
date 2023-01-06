@@ -1,0 +1,25 @@
+[
+	{
+		"ParameterKey": "EnvironmentName",
+		"ParameterValue": "UdacityProject2"
+	},
+
+	{
+		"ParameterKey": "WebAppIMG",
+		"ParameterValue": "ami-06878d265978313ca"
+	},
+	{
+		"ParameterKey": "BastionIMG",
+		"ParameterValue": "ami-0b5eea76982371e91  "
+
+	},
+	{
+		"ParameterKey": "KeyName",
+		"ParameterValue": "udacityVirginia"   
+	},
+	{
+		"ParameterKey": "InstanceType",
+		"ParameterValue": "t2.micro"   
+	}
+
+]
