@@ -31,7 +31,7 @@ Parameters:
         Type: String 
 
     InstanceType:
-        Description: This for instace type (t2.micro, ...)
+        Description: This for instace type (t3.small, ...)
         Type: String     
 
 Resources:
@@ -83,7 +83,7 @@ Resources:
     Type: AWS::AutoScaling::LaunchConfiguration
     Properties:
       ImageId: !Ref WebAppIMG 
-      KeyName: !Ref KeyName
+      #KeyName: !Ref KeyName
       InstanceType: !Ref InstanceType
       #IamInstanceProfile: !Ref WebAppInstanceProfile
       UserData:
@@ -192,8 +192,8 @@ Resources:
   BastionHost: 
     Type: AWS::EC2::Instance
     Properties:
-      InstanceType: t2.micro
-      ImageId: !Ref BastionIMG      # Amazon Linux 2 AMI in us-east-1
+      InstanceType: !Ref InstanceType
+      ImageId: !Ref BastionIMG           # Amazon Linux 2 AMI in us-east-1
       KeyName: !Ref KeyName              #ToDo : change this key with yours
       NetworkInterfaces: 
         - DeviceIndex: "0" 

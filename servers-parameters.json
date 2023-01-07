@@ -19,7 +19,7 @@
 	},
 	{
 		"ParameterKey": "InstanceType",
-		"ParameterValue": "t2.micro"   
+		"ParameterValue": "t3.small"   
 	}
 
 ]
