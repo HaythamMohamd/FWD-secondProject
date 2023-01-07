@@ -1,0 +1,37 @@
+This project for create the infra at AWS using cloudFormation
+
+1- Network Part
+    # Steps 
+    # 01- create the vpc which name is comming from el variable in server-parmeters.json
+    # 02- create internet gw which let us reach internet        
+    # 03- link the internet gw with myvpc which links the IDs for them        
+    # 04- create a public subnet1 using the vpcid and put it at the first zone and also enable public ip
+    # 05- create a public subnet2 using the vpcid and put it at the second zone and also enable public ip    
+    # 06- create a private subnet1 using the vpcid and put it at the first zone and also disable public ip
+    # 07- create a private subnet2 using the vpcid and put it at the second zone and also disable public ip
+    # 08- create eip for the fist nat gateway
+    # 09- create eip for the second nat gateway
+    # 10- create the first nat gateway  using the public subnet 1 and the allocation of the eip
+    # 11- create the second nat gateway  using the public subnet 2 and the allocation of the eip
+    # 12- create the public route table for the vpc using the vpcid
+    # 13- add a default route that means if you want to access any ip 0.0.0.0/0 go to internet gw 
+    # 14- associate the public route1 table with the public subnet1
+    # 15- associate the public route2 table with the public subnet2
+    # 16- create private route table1
+    # 17- create default private route for the instace which want to go to internet through NAT gw 1
+    # 18- associate the private subnet1 with the privat route table
+    # 19- create private route table2
+    # 20- create default private route for the instace which want to go to internet through NAT gw 2
+    # 21- associate private subnet2 with the route table 2
+
+
+
+2- Server Part
+  # 01- create load balancer security group which allow port 80 from any ip 
+  # 02- create web server security group which allow port 80 from any ip and port 22
+  # 03- create launch config with user data which install apache, 
+  # 04- create auo scalling group which determin which min,desired and max ecs that you want
+  # 05- create load balancer using the two public subnets and load balancer security group 
+  # 06- create listener for the load balancer which will forward the traffic to the target group at port 80
+  # 07- create listener rule 
+  # 08- the configuration for the target group
